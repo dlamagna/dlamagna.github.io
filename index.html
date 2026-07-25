@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Davide Lamagna</title>
+  <meta name="description" content="Davide Lamagna - software and research engineer based in Barcelona." />
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --link: #0f766e;
+      --link-hover: #115e59;
+      --max: 760px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(100%, var(--max));
+      margin: 48px auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin: 32px 0 12px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    a { color: var(--link); }
+    a:hover { color: var(--link-hover); }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .links a {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .links a:hover {
+      color: var(--link-hover);
+      border-color: #cbd5e1;
+    }
+
+    .publications {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    .publications li + li {
+      margin-top: 12px;
+    }
+
+    .note {
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      main { padding: 24px; margin: 24px auto; }
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Davide Lamagna</h1>
+    <p>Software and Research Engineer based in Barcelona.</p>
+    <p>Specialising in distributed systems, backend infrastructure, Kubernetes, event-driven pipelines, and agentic AI systems.</p>
+
+    <div class="links">
+      <a href="https://github.com/dlamagna" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/davide-lamagna-6ab91a193?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://dlamagna.github.io/DavideLamagnaCV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      <a href="mailto:davidelamagna17@gmail.com">Email</a>
+    </div>
+
+    <h2>Publications</h2>
+    <ul class="publications">
+      <li>3rd Workshop on Networks in AI Computing @ SIGCOMM: <em>Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology</em> — Lead Author.</li>
+    </ul>
+  </main>
+</body>
+</html>
