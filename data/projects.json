@@ -1,0 +1,291 @@
+{
+  "site": {
+    "headline": "Track record of taking early-stage products from first prototype to live clients: I build them, run them as a product, and get customers onboarded."
+  },
+
+  "featured": [
+    {
+      "id": "training-app",
+      "title": "A training app with a built-in AI coach",
+      "meta": "Own product · 2026",
+      "problem": "Logging training has to take seconds on a phone, and an AI coach is only useful if it can see that data.",
+      "did": "Designed and built the whole app: a fast phone interface that also works offline, a backend on Cloudflare, and a direct connection that lets Claude read and update the training data. Automated agents review each day and fix the most important reported bugs.",
+      "stack": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Hono",
+        "Cloudflare Workers",
+        "D1 (SQLite)",
+        "MCP server",
+        "Vitest",
+        "GitHub Actions"
+      ],
+      "outcome": "Runs at no cost on free plans. Every change is tested and released automatically, and anyone can try the full app in the browser with sample data.",
+      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/climbing-app/" },
+      "links": [
+        { "label": "Code", "url": "https://github.com/dlamagna/climbing-app" }
+      ]
+    },
+    {
+      "id": "agentraffic",
+      "title": "AgenTraffic: how teams of AI agents load the network",
+      "meta": "MEng thesis, UPC · 2025 to 2026",
+      "problem": "When several AI agents work together, does the way they are organised change the load they put on servers and networks?",
+      "did": "Built a test setup that runs the same team of agents in three arrangements (one after another, through a coordinator, and everyone talking to everyone) and measures the traffic at every level, from the application down to the network.",
+      "stack": ["Python", "Docker", "vLLM", "Prometheus", "Grafana", "Jaeger", "cAdvisor"],
+      "outcome": "It does: when one agent hands work to several others, requests arrive in bursts that the standard traffic model cannot describe. Published as lead author at NAIC 2026 @ ACM SIGCOMM.",
+      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/agentraffic/" },
+      "links": [
+        { "label": "Paper", "url": "https://dl.acm.org/doi/10.1145/3789240.3828749" },
+        { "label": "Code", "url": "https://github.com/dlamagna/agentraffic" }
+      ]
+    },
+    {
+      "id": "agentic-devops",
+      "title": "Agentic DevOps: managing a team of AI coding agents",
+      "meta": "Own tooling · private repository",
+      "problem": "One person directing many AI coding agents on the same codebase needs their work to stay easy to review and combine, and to carry on when usage limits interrupt it.",
+      "did": "Built a Claude Code plugin that gives a lead agent the tools to start helper agents, check and merge their work, and hand over to a fresh session. Its safety rules cannot be skipped, and overnight runs restart on their own.",
+      "stack": ["TypeScript", "MCP TypeScript SDK", "Zod", "Vitest", "Claude Code plugins and hooks", "GitHub CLI"],
+      "outcome": "Used to build Margin. Reviewing each piece of work before merging it caught serious bugs in about half of them.",
+      "demo": { "label": "Check it out", "url": "demos/agentic-devops/" },
+      "links": []
+    },
+    {
+      "id": "sp-global",
+      "title": "Building and running a financial risk analytics product",
+      "meta": "S&P Global · 2021 to present",
+      "problem": "A new risk analytics product for banks and investment firms had to win its first clients and pass a security audit while it was still being built.",
+      "did": "I now work on it as both software engineer and technical product manager. Before that, I got its first clients set up and running.",
+      "items": [
+        "Run the product side of the team's internal tools and AI work: priorities, scope agreed with the firm's AI teams, and planning",
+        "Built automated tests that every release must pass, which greatly reduced manual checking",
+        "Automated how the product is built, tested and released",
+        "Helped move the product's data to a new database setup (PostgreSQL and Amazon Athena) for more reliable, faster queries",
+        "Built real-time monitoring and dashboards on AWS",
+        "Built Excel add-ins and early interface prototypes for the product",
+        "Earlier, set up 4 banks and investment firms as clients in one year",
+        "Led the business's first SOC2 security audit"
+      ],
+      "stack": ["Python", "AWS", "PostgreSQL", "Amazon Athena", "Grafana", "GitLab CI/CD", "Excel add-ins", "Unix"],
+      "outcome": "4 clients live in one year, and some of the tools I built became part of the product.",
+      "demo": {
+        "label": "Check it out",
+        "url": "https://www.marketplace.spglobal.com/en/solutions/financial-risk-analytics-(71b352f3-259c-4483-a65d-324555ff1ffb)#overview"
+      },
+      "links": [],
+      "todo": [
+        {
+          "need": "what the Excel add-ins and frontend UI prototypes did, their stack, and who used them"
+        },
+        {
+          "need": "outcome numbers for monitoring, automation (hours saved), regression testing (release time before/after), the data migration (query speed-up) and the SOC2 audit (type, result), if any are OK to show"
+        }
+      ]
+    },
+    {
+      "id": "edge-healer",
+      "title": "Edge-Healer: servers that repair themselves offline",
+      "meta": "UPC · 2025",
+      "problem": "Servers at remote sites rely on a central controller to restart apps that crash. If the connection to it drops, a crashed app stays down until the link comes back.",
+      "did": "Built a small agent that runs on every server. The servers keep each other updated on their health and spare capacity, and when an app crashes they agree among themselves which one restarts it.",
+      "stack": ["Go", "Python", "Kubernetes", "Kopf", "Serf", "SQLite", "Prometheus", "KinD"],
+      "outcome": "Designed to recover in under a second, and to tidy up any duplicates once the connection returns. The paper, poster and an interactive demo are on the project site.",
+      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/kubernetes-edge-healer/" },
+      "links": [
+        { "label": "Paper (PDF)", "url": "https://dlamagna.github.io/kubernetes-edge-healer/assets/lamagna_edge_healer_final.pdf" },
+        { "label": "Code", "url": "https://github.com/dlamagna/kubernetes-edge-healer" }
+      ]
+    },
+    {
+      "id": "margin",
+      "title": "Margin: a Word editor with Claude built in",
+      "meta": "Own product, in progress · private repository",
+      "problem": "AI edits to real Word documents should keep the formatting and be easy to review.",
+      "did": "Building a desktop app that opens a Word document next to Claude Code. Claude edits the open document directly, and every edit shows up as a tracked change to accept or reject.",
+      "stack": [
+        "TypeScript",
+        "React",
+        "SuperDoc",
+        "xterm.js",
+        "Hono",
+        "WebSockets",
+        "MCP TypeScript SDK",
+        "Electron",
+        "Vitest",
+        "Playwright"
+      ],
+      "outcome": "Built by one lead AI agent coordinating helpers (see Agentic DevOps): 81 changes merged so far, with up to about 20 in progress at once.",
+      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/margin/walkthrough.html" },
+      "links": [
+        { "label": "Project site", "url": "https://dlamagna.github.io/margin/" }
+      ]
+    }
+  ],
+
+  "more": [
+    {
+      "group": "Smaller projects",
+      "title": "Shared Task Queue",
+      "years": "2026",
+      "line": "Lets AI assistants queue jobs on a shared server and run them one at a time, so several people can use it without clashing.",
+      "url": "https://github.com/dlamagna/shared-task-queue"
+    },
+    {
+      "group": "Smaller projects",
+      "title": "Context-Aware HPA",
+      "years": "2024 to 2025",
+      "line": "Smarter automatic scaling for apps on Kubernetes: each service scales up based on the load arriving further up the chain, not only its own. Cut the slowest 1% of response times by 9.88% on a standard benchmark.",
+      "url": "https://github.com/dlamagna/deathstar-context-aware"
+    },
+    {
+      "group": "Smaller projects",
+      "title": "Listen2MyDay",
+      "years": "2026",
+      "line": "Journal app, in progress, that adds the day's music, weather, health and listening stats, plus any open data you choose, to each entry. Installs on a phone like an app. Private repository.",
+      "demo": { "label": "Check it out", "url": "demos/listen2myday/" }
+    },
+    {
+      "group": "Smaller projects",
+      "title": "Crawley",
+      "years": "2025",
+      "line": "Web crawler that saves a site's pages as Markdown, HTML or plain text, follows only the sections you choose and paces its requests politely.",
+      "url": "https://github.com/dlamagna/crawley"
+    },
+    {
+      "group": "Smaller projects",
+      "title": "Social Network Tracing",
+      "years": "2025",
+      "line": "Automatically collects performance data from a sample social-network app running on Kubernetes.",
+      "url": "https://github.com/dlamagna/social-network-tracing"
+    },
+    {
+      "group": "Smaller projects",
+      "title": "Graph-Based ML",
+      "years": "2024",
+      "line": "Works out how a network of air-quality sensors is connected from their readings alone, comparing three statistical methods.",
+      "url": "https://github.com/dlamagna/iot-graph-analysis"
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Freelance and personal projects",
+      "org": "Self-employed",
+      "dates": "Apr 2025 to present",
+      "place": "Remote",
+      "line": "Consulting for early-stage startups (AI prototypes, cloud architecture, and data collection and web scraping), and building my own AI products."
+    },
+    {
+      "role": "Research Engineer, Agentic AI and Kubernetes Systems",
+      "org": "Barcelona Neural Networking Centre, UPC",
+      "dates": "Sep 2024 to Aug 2026",
+      "place": "Barcelona",
+      "line": "Research with Cisco Research and Budapest University of Technology and Economics. Lead author of a paper at NAIC 2026 @ ACM SIGCOMM; guest lectures on AI agents."
+    },
+    {
+      "org": "S&P Global (formerly IHS Markit), Financial Risk Analytics",
+      "dates": "Jun 2021 to present",
+      "place": "London, Barcelona",
+      "roles": [
+        {
+          "role": "Software Engineer, Technical Product",
+          "dates": "Oct 2024 to present",
+          "place": "Barcelona",
+          "line": "Engineering and product for the team's internal tools: priorities, automated testing, data migration and monitoring."
+        },
+        {
+          "role": "Software Engineer, Customer Success",
+          "dates": "Aug 2022 to Aug 2024",
+          "place": "London",
+          "line": "Set up 4 institutional clients; led the first SOC2 security audit."
+        },
+        {
+          "role": "Software Engineer, Summer Intern",
+          "dates": "Jun to Sep 2021",
+          "place": "London",
+          "line": "Supported the daily running of a risk analytics service with Python and Unix scripts."
+        }
+      ]
+    },
+    {
+      "role": "Maths tutor and mentor",
+      "org": "Self-employed, part-time",
+      "dates": "Apr 2018 to Jan 2023",
+      "place": "London and online",
+      "line": "11+, GCSE and A Level mathematics; university and early-careers mentoring."
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "MEng Innovation and Research in Informatics (Computer Networks and Distributed Systems)",
+      "org": "Universitat Politècnica de Catalunya, FIB",
+      "dates": "2024 to 2026",
+      "line": "GPA 8.5/10. Full research scholarship with the Computer Architecture department."
+    },
+    {
+      "degree": "BSc Economics, Management and Computer Science",
+      "org": "Bocconi University, Milan",
+      "dates": "2019 to 2022",
+      "line": "Final grade 105/110. Erasmus semester at Nova School of Business and Economics, Lisbon, 2022."
+    }
+  ],
+
+  "writing": [
+    {
+      "title": "Towards Traffic Modelling of Multi-Agent Systems: The Role of Coordination Topology",
+      "venue": "3rd ACM SIGCOMM Workshop on Networks for AI Computing (NAIC 2026), Denver",
+      "date": "Presented 17 Aug 2026",
+      "role": "Lead author, with Albert Cabellos, Alberto Rodriguez-Natal, Gábor Rétvári and Berta Serracanta",
+      "links": [
+        { "label": "Paper", "url": "https://dl.acm.org/doi/10.1145/3789240.3828749" },
+        { "label": "DOI 10.1145/3789240.3828749", "url": "https://doi.org/10.1145/3789240.3828749" },
+        { "label": "arXiv", "url": "https://arxiv.org/abs/2608.20494" },
+        { "label": "Blog post", "url": "https://dlamagna.github.io/agentraffic/docs/blog/" },
+        { "label": "Code", "url": "https://github.com/dlamagna/agentraffic" }
+      ]
+    },
+    {
+      "title": "Context-Aware Scaling in Kubernetes",
+      "venue": "Submission in progress, 2027",
+      "date": "",
+      "role": "Second author, with Berta Serracanta (first author), Gábor Rétvári, Alberto Rodriguez-Natal and Albert Cabellos",
+      "links": [
+        { "label": "Code", "url": "https://github.com/bserracanta/Context-Aware-HPA" },
+        { "label": "My testbed", "url": "https://github.com/dlamagna/deathstar-context-aware" }
+      ]
+    },
+    {
+      "title": "On the Stability of the Kubernetes Horizontal Autoscaler Control Loop",
+      "venue": "IEEE Access, vol. 13",
+      "date": "2025",
+      "role": "Technical support for the paper by Berta Serracanta, Andor Lukács, Alberto Rodriguez-Natal, Albert Cabellos and Gábor Rétvári",
+      "links": [
+        { "label": "Paper (open access)", "url": "https://ieeexplore.ieee.org/document/10829852" },
+        { "label": "DOI 10.1109/ACCESS.2025.3526751", "url": "https://doi.org/10.1109/ACCESS.2025.3526751" }
+      ]
+    },
+    {
+      "title": "Edge-Healer: Decentralising Kubernetes with Edge Self-Healing",
+      "venue": "Universitat Politècnica de Catalunya, FIB",
+      "date": "2025",
+      "role": "Sole author. Paper, poster and write-up",
+      "links": [
+        { "label": "Write-up", "url": "https://dlamagna.github.io/kubernetes-edge-healer/docs/blog/" },
+        { "label": "Paper (PDF)", "url": "https://dlamagna.github.io/kubernetes-edge-healer/assets/lamagna_edge_healer_final.pdf" },
+        {
+          "label": "Poster (PDF)",
+          "url": "https://dlamagna.github.io/kubernetes-edge-healer/assets/lamagna_edge_healer_poster.pdf"
+        }
+      ]
+    },
+    {
+      "title": "Blockchain Technology: The Next Stage of the Music Industry's Evolutionary Path?",
+      "venue": "BSc dissertation, Bocconi University (distinction)",
+      "date": "2022",
+      "role": "Could blockchain make music royalty payments fairer and faster? Includes a design for a shared copyright register"
+    }
+  ]
+}

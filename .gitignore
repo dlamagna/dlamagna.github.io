@@ -1,0 +1,16 @@
+# Private working notes: GitHub Pages would publish them if committed.
+side-hustles.md
+sp-global-projects.md
+.nfs*
+.DS_Store
+# Working notes and drafts, not part of the site.
+TODO.md
+cv-update-prompt.md
+CV.v27_freelance.pdf
+CV.v*.pdf
+*.pdf.bak
+
+# Local only, not part of the site
+profile-README-draft.md
+assets/profile.jpg
+.claude/
