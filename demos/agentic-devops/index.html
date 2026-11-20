@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme-toggle="on">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic DevOps: running a team of coding agents · Davide Lamagna</title>
+  <meta name="description" content="How Agentic DevOps works: a Claude Code plugin that lets one lead AI agent run a team of helper agents on the same codebase.">
+  <link rel="canonical" href="https://dlamagna.github.io/demos/agentic-devops/">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#fbfbf9">
+  <!-- Same theme switch as the home page: "off" on <html> keeps the page light only. -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      if (d.getAttribute('data-theme-toggle') === 'off') return;
+      try { if (localStorage.getItem('theme') === 'dark') d.setAttribute('data-theme', 'dark'); } catch (e) {}
+    })();
+  </script>
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="site-header__name" href="../../">Davide Lamagna</a>
+      <div class="site-header__end">
+        <nav aria-label="Site">
+          <ul class="site-nav">
+            <li><a href="../../#work">All work</a></li>
+            <li><a href="../../#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap concept">
+    <a class="concept__back" href="../../#work-agentic-devops">← Back to all work</a>
+    <h1>Agentic DevOps: managing a team of AI coding agents</h1>
+    <p class="concept__lede">A Claude Code plugin that lets one lead AI agent run a team of helper agents on the same codebase, while keeping their work easy to review, safe to merge and gentle on the computer it runs on.</p>
+    <p class="concept__note">Private repository: this page explains how it works.</p>
+
+    <section aria-labelledby="flow-title">
+      <h2 id="flow-title">How a piece of work moves</h2>
+      <ol class="flow">
+        <li><strong>Plan</strong><p>The lead agent splits the project into small tasks, each with a clear goal and the tests that prove it is done.</p></li>
+        <li><strong>Build</strong><p>A helper agent takes one task in its own copy of the code and writes the tests first. New helpers only start when the computer has room for them.</p></li>
+        <li><strong>Review</strong><p>A second agent tries to break the work before anyone sees it. Its findings go back to the helper that wrote it, which still remembers the task.</p></li>
+        <li><strong>Check</strong><p>Every automated check has to pass, on the computer and on GitHub. A failing check gets fixed, never switched off.</p></li>
+        <li><strong>Merge</strong><p>The lead combines the work with the latest version and merges it once everything is green. Nothing merges without an explicit go-ahead.</p></li>
+        <li><strong>Keep going</strong><p>The project board stays up to date at every step, and an overnight run that hits a usage limit restarts on its own.</p></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="parts-title">
+      <h2 id="parts-title">What is in the plugin</h2>
+      <div class="offers">
+        <article class="offer">
+          <h3>15 tools for the lead</h3>
+          <p>Starting and tracking helpers, sharing the computer's memory fairly, running the checks, merging, updating the project board, and writing notes for the next session.</p>
+        </article>
+        <article class="offer">
+          <h3>Rules that cannot be skipped</h3>
+          <p>A guard checks every command before it runs, and blocks the risky ones: merging without the checks, changing the main version directly, or starting more helpers than allowed.</p>
+        </article>
+        <article class="offer">
+          <h3>Instructions for each role</h3>
+          <p>Ready-made briefs for the lead, builder and reviewer agents, and starting prompts for planning, daytime work, handovers and overnight runs.</p>
+        </article>
+        <article class="offer">
+          <h3>Safe by default</h3>
+          <p>It uses the existing GitHub login and stores no passwords, never merges work the owner has reserved, and keeps a log with sensitive details removed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="result-title">
+      <h2 id="result-title">Result</h2>
+      <p class="result">Used to build <a href="https://dlamagna.github.io/margin/">Margin</a>: 81 changes merged, up to about 20 in progress at once, with one person reviewing. The review step caught serious bugs in about half of the changes, including security holes, that the helpers' own tests had missed.</p>
+    </section>
+
+    <section aria-labelledby="stack-title">
+      <h2 id="stack-title">Stack</h2>
+      <ul class="chips" aria-label="Stack">
+        <li class="chip">TypeScript</li><li class="chip">MCP TypeScript SDK</li><li class="chip">Zod</li><li class="chip">esbuild</li><li class="chip">Vitest</li><li class="chip">Claude Code plugins, hooks and skills</li><li class="chip">GitHub CLI</li><li class="chip">GitHub Projects</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <p class="contact__lede">Want something like this for your team? <a href="mailto:davidelamagna17@gmail.com">davidelamagna17@gmail.com</a></p>
+      <p class="contact__small">© 2026 Davide Lamagna · <a href="../../">dlamagna.github.io</a></p>
+    </div>
+  </footer>
+</body>
+</html>
