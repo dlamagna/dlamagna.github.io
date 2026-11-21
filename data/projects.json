@@ -20,9 +20,9 @@
     },
     {
       "id": "sp-global",
-      "title": "Building and running a financial risk analytics product",
+      "title": "Building and running an analytics product",
       "meta": "S&P Global · 2021 to present",
-      "problem": "A new risk analytics product for banks and investment firms had to win its first clients and pass a security audit while it was still being built.",
+      "problem": "A new analytics product for banks and investment firms had to win its first clients and pass a security audit while it was still being built.",
       "did": "I now work on it as both software engineer and technical product manager. Before that, I got its first clients set up and running.",
       "items": [
         "Run the product side of the team's internal tools and AI work: priorities, scope agreed with the firm's AI teams, and planning",
@@ -185,27 +185,28 @@
       "line": "Research with Cisco Research and Budapest University of Technology and Economics. Lead author of a paper at NAIC 2026 @ ACM SIGCOMM; guest lectures on AI agents."
     },
     {
-      "org": "S&P Global (formerly IHS Markit), Financial Risk Analytics",
+      "org": "S&P Global (formerly IHS Markit), Analytics",
       "dates": "Jun 2021 to present",
       "place": "London, Barcelona",
+      "line": "Grew from summer intern to engineer and product manager, working across many different teams.",
       "roles": [
         {
           "role": "Software Engineer, Technical Product",
           "dates": "Oct 2024 to present",
           "place": "Barcelona",
-          "line": "Engineering and product for the team's internal tools: priorities, automated testing, data migration and monitoring."
+          "line": "Engineer and product manager across the team's work: internal tools (priorities, automated testing, data migration, monitoring) and product work for new prospective clients, with scope agreed with the firm's AI teams."
         },
         {
           "role": "Software Engineer, Customer Success",
           "dates": "Aug 2022 to Aug 2024",
           "place": "London",
-          "line": "Set up 4 institutional clients; led the first SOC2 security audit."
+          "line": "Set up 4 institutional clients and led the business's first SOC2 security audit, bringing together the engineering and security teams."
         },
         {
           "role": "Software Engineer, Summer Intern",
           "dates": "Jun to Sep 2021",
           "place": "London",
-          "line": "Supported the daily running of a risk analytics service with Python and Unix scripts."
+          "line": "Supported the daily running of an analytics service with Python and Unix scripts."
         }
       ]
     },
