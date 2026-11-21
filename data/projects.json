@@ -5,29 +5,6 @@
 
   "featured": [
     {
-      "id": "training-app",
-      "title": "A training app with a built-in AI coach",
-      "meta": "Own product · 2026",
-      "problem": "Logging training has to take seconds on a phone, and an AI coach is only useful if it can see that data.",
-      "did": "Designed and built the whole app: a fast phone interface that also works offline, a backend on Cloudflare, and a direct connection that lets Claude read and update the training data. Automated agents review each day and fix the most important reported bugs.",
-      "stack": [
-        "TypeScript",
-        "React",
-        "Vite",
-        "Hono",
-        "Cloudflare Workers",
-        "D1 (SQLite)",
-        "MCP server",
-        "Vitest",
-        "GitHub Actions"
-      ],
-      "outcome": "Runs at no cost on free plans. Every change is tested and released automatically, and anyone can try the full app in the browser with sample data.",
-      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/climbing-app/" },
-      "links": [
-        { "label": "Code", "url": "https://github.com/dlamagna/climbing-app" }
-      ]
-    },
-    {
       "id": "agentraffic",
       "title": "AgenTraffic: how teams of AI agents load the network",
       "meta": "MEng thesis, UPC · 2025 to 2026",
@@ -40,17 +17,6 @@
         { "label": "Paper", "url": "https://dl.acm.org/doi/10.1145/3789240.3828749" },
         { "label": "Code", "url": "https://github.com/dlamagna/agentraffic" }
       ]
-    },
-    {
-      "id": "agentic-devops",
-      "title": "Agentic DevOps: managing a team of AI coding agents",
-      "meta": "Own tooling · private repository",
-      "problem": "One person directing many AI coding agents on the same codebase needs their work to stay easy to review and combine, and to carry on when usage limits interrupt it.",
-      "did": "Built a Claude Code plugin that gives a lead agent the tools to start helper agents, check and merge their work, and hand over to a fresh session. Its safety rules cannot be skipped, and overnight runs restart on their own.",
-      "stack": ["TypeScript", "MCP TypeScript SDK", "Zod", "Vitest", "Claude Code plugins and hooks", "GitHub CLI"],
-      "outcome": "Used to build Margin. Reviewing each piece of work before merging it caught serious bugs in about half of them.",
-      "demo": { "label": "Check it out", "url": "demos/agentic-devops/" },
-      "links": []
     },
     {
       "id": "sp-global",
@@ -96,6 +62,40 @@
       "links": [
         { "label": "Paper (PDF)", "url": "https://dlamagna.github.io/kubernetes-edge-healer/assets/lamagna_edge_healer_final.pdf" },
         { "label": "Code", "url": "https://github.com/dlamagna/kubernetes-edge-healer" }
+      ]
+    },
+    {
+      "id": "agentic-devops",
+      "title": "Agentic DevOps: managing a team of AI coding agents",
+      "meta": "Own tooling · private repository",
+      "problem": "One person directing many AI coding agents on the same codebase needs their work to stay easy to review and combine, and to carry on when usage limits interrupt it.",
+      "did": "Built a Claude Code plugin that gives a lead agent the tools to start helper agents, check and merge their work, and hand over to a fresh session. Its safety rules cannot be skipped, and overnight runs restart on their own.",
+      "stack": ["TypeScript", "MCP TypeScript SDK", "Zod", "Vitest", "Claude Code plugins and hooks", "GitHub CLI"],
+      "outcome": "Used to build Margin. Reviewing each piece of work before merging it caught serious bugs in about half of them.",
+      "demo": { "label": "Check it out", "url": "demos/agentic-devops/" },
+      "links": []
+    },
+    {
+      "id": "training-app",
+      "title": "A training app with a built-in AI coach",
+      "meta": "Own product · 2026",
+      "problem": "Logging training has to take seconds on a phone, and an AI coach is only useful if it can see that data.",
+      "did": "Designed and built the whole app: a fast phone interface that also works offline, a backend on Cloudflare, and a direct connection that lets Claude read and update the training data. Automated agents review each day and fix the most important reported bugs.",
+      "stack": [
+        "TypeScript",
+        "React",
+        "Vite",
+        "Hono",
+        "Cloudflare Workers",
+        "D1 (SQLite)",
+        "MCP server",
+        "Vitest",
+        "GitHub Actions"
+      ],
+      "outcome": "Runs at no cost on free plans. Every change is tested and released automatically, and anyone can try the full app in the browser with sample data.",
+      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/climbing-app/" },
+      "links": [
+        { "label": "Code", "url": "https://github.com/dlamagna/climbing-app" }
       ]
     },
     {
