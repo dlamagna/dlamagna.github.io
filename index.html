@@ -164,11 +164,34 @@
       <h2 id="services-title">Areas of work</h2>
       <div class="offers">
         <article class="offer">
+          <h3>Network traffic of distributed AI workloads</h3>
+          <ul>
+            <li>Measuring how the way a team of AI agents is organised (in a chain, through a coordinator, or all-to-all) changes the load on servers and the network.</li>
+            <li>Found that hand-offs to several agents make requests arrive in bursts that the standard traffic model cannot describe. <a href="https://doi.org/10.1145/3789240.3828749">Paper</a>, NAIC 2026 @ ACM SIGCOMM.</li>
+            <li>Profiling LLM serving with vLLM, following a request from the application down to the network.</li>
+          </ul>
+        </article>
+        <article class="offer">
+          <h3>Self-healing and autoscaling on Kubernetes</h3>
+          <ul>
+            <li>Edge-Healer: servers at remote sites that agree among themselves which one restarts a crashed app, with no central controller and recovery in under a second.</li>
+            <li>Context-aware autoscaling: each service scales on the load arriving further up the chain, cutting the slowest 1% of response times by 9.88% on a standard benchmark.</li>
+            <li>Technical support for a study of the stability of the Kubernetes autoscaler's control loop (IEEE Access, 2025).</li>
+          </ul>
+        </article>
+        <article class="offer">
+          <h3>Measurement and observability</h3>
+          <ul>
+            <li>Test setups that record traffic at every level with Prometheus, Grafana, Jaeger and cAdvisor.</li>
+            <li>Automated collection of performance data and traces from a sample social-network app running on Kubernetes.</li>
+            <li>Working out how a network of sensors is connected from their readings alone, comparing three statistical methods.</li>
+          </ul>
+        </article>
+        <article class="offer">
           <h3>Backend, cloud and monitoring</h3>
           <ul>
             <li>Real-time monitoring and dashboards on AWS for an analytics product.</li>
             <li>A move to a new database setup, and automated tests that every release must pass.</li>
-            <li>Research on servers that scale and repair themselves, on Kubernetes.</li>
           </ul>
         </article>
         <article class="offer">
@@ -180,18 +203,12 @@
           </ul>
         </article>
         <article class="offer">
-          <h3>Full-stack AI products</h3>
+          <h3>AI agents and full-stack products</h3>
           <ul>
             <li>A training app with an AI coach: phone interface, backend and a direct connection to Claude, all tested and released automatically. <a href="https://dlamagna.github.io/climbing-app/">Check it out</a>.</li>
             <li>Listen2MyDay: a journal app that adds the day's music, weather and health stats to each entry.</li>
             <li>Margin: a Word editor where Claude edits the open document and every change can be accepted or rejected.</li>
-          </ul>
-        </article>
-        <article class="offer">
-          <h3>AI agents</h3>
-          <ul>
             <li>Four tools that connect Claude to real systems (MCP servers): a training app's data, a shared job queue, a team of coding agents, and Word documents.</li>
-            <li>Research on how teams of AI agents load the network, published at NAIC 2026 @ ACM SIGCOMM.</li>
             <li>Agents that run on a schedule to review each day's data and fix reported bugs.</li>
           </ul>
         </article>
