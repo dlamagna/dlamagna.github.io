@@ -92,7 +92,7 @@ The project sites under the same domain (`/agentraffic/`, `/kubernetes-edge-heal
 
 ## Change the headline
 
-Edit `site.headline` at the top of `data/projects.json`, then run `python3 scripts/sync.py`. That updates the hero, the meta description, the Open Graph and Twitter tags, the JSON-LD and the preview image template. Then re-take the preview image (next section).
+Edit `site.headline` at the top of `data/projects.json`, then run `python3 scripts/sync.py`. That updates the meta description, the Open Graph and Twitter tags, the JSON-LD and the preview image template. Then re-take the preview image (next section).
 
 ## Change the photo
 
