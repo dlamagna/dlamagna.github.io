@@ -157,8 +157,8 @@
     });
   }
 
-  // Light/dark toggle. Light is the default; the choice is remembered in localStorage.
-  // To keep the site light only, set data-theme-toggle="off" on <html> in index.html:
+  // Light/dark toggle. Dark is the default; the choice is remembered in localStorage.
+  // To keep the site dark only, set data-theme-toggle="off" on <html> in index.html:
   // the button stays hidden and saved choices are ignored (see also the inline script in <head>).
   var root = document.documentElement;
   var toggle = document.getElementById('theme-toggle');
@@ -176,7 +176,7 @@
   function applyTheme(dark) {
     if (dark) root.setAttribute('data-theme', 'dark'); else root.removeAttribute('data-theme');
     if (toggle) toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    if (themeColor) themeColor.setAttribute('content', dark ? '#101315' : '#fbfbf9');
+    if (themeColor) themeColor.setAttribute('content', dark ? '#0d1117' : '#ffffff');
     shareTheme(dark);
   }
   if (toggle && root.getAttribute('data-theme-toggle') !== 'off') {
@@ -188,7 +188,7 @@
       try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (err) { /* storage blocked: the choice lasts for this page only */ }
     });
   } else {
-    shareTheme(false); // toggle off: the site is light only, so the project sites open light too
+    shareTheme(true); // toggle off: the site is dark only, so the project sites open dark too
   }
 
   if (document.querySelector('[data-render]')) fetch('data/projects.json')
