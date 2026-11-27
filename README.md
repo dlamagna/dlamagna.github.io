@@ -16,7 +16,6 @@ Plain HTML, CSS and one small JavaScript file. There is no build step: GitHub Pa
 | `scripts/sync.py` | Copies `data/projects.json` into the static parts of `index.html` (see below) |
 | `scripts/og-image.html` | Template for the social preview image |
 | `demos/<project>/` | Concept pages for projects in private repositories (agentic-devops, Listen2MyDay), linked from their cards. Hand-written HTML on the same stylesheet; made-up data only |
-| `DavideLamagnaCV.pdf` | The CV linked from the site |
 | `robots.txt`, `sitemap.xml` | For search engines |
 
 ### Why `scripts/sync.py` exists
@@ -112,12 +111,6 @@ npx playwright@1.59.1 screenshot --viewport-size=1200,630 \
 ```
 
 (Or open `scripts/og-image.html` in a browser with the window at 1200×630 and take a screenshot.) LinkedIn caches previews: use the [Post Inspector](https://www.linkedin.com/post-inspector/) to refresh it.
-
-## Update the CV
-
-The CV is edited in Google Docs (`CV.vNN…`). When it is final, ask Claude Code to "update the CV": a local Claude Code skill (`update-cv`, kept outside the repository) exports the latest Doc as a PDF and installs it.
-
-To do it by hand, download the PDF from Docs and run `python3 scripts/install_cv.py path/to/cv.pdf`. The script checks the PDF (valid, 2 pages, has the name), replaces `DavideLamagnaCV.pdf` (same name, so existing links keep working), keeps the old file as `DavideLamagnaCV.pdf.bak` and updates its `<lastmod>` date in `sitemap.xml`. Add `--dry-run` to validate only.
 
 ## Checks before merging
 
