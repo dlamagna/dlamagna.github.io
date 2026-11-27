@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en-GB" data-theme-toggle="on">
+<html lang="en-GB" data-theme="dark" data-theme-toggle="on">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Agentic DevOps: running a team of coding agents · Davide Lamagna</title>
   <meta name="description" content="How Agentic DevOps works: a Claude Code plugin that lets one lead AI agent run a team of helper agents on the same codebase.">
   <link rel="canonical" href="https://dlamagna.github.io/demos/agentic-devops/">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#fbfbf9">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0d1117">
   <!-- Same theme switch as the home page: "off" on <html> keeps the page light only. -->
   <script>
     (function () {
       var d = document.documentElement;
       if (d.getAttribute('data-theme-toggle') === 'off') return;
-      try { if (localStorage.getItem('theme') === 'dark') d.setAttribute('data-theme', 'dark'); } catch (e) {}
+      try { if (localStorage.getItem('theme') === 'light') d.removeAttribute('data-theme'); } catch (e) {}
     })();
   </script>
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">

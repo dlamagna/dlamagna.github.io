@@ -1,45 +1,46 @@
-/* Davide Lamagna: site styles. Light by default; dark when the visitor picks it with the header toggle (data-theme="dark" on <html>). */
+/* Davide Lamagna: site styles. Dark by default (data-theme="dark" on <html>); the header toggle switches to light and remembers the choice. */
 
 :root {
   color-scheme: light;
-  --bg: #fbfbf9;
-  --surface: #ffffff;
-  --surface-2: #f2f4f2;
-  --text: #16191d;
-  --muted: #4f5964;        /* 7.0:1 on --bg */
-  --border: #dfe3e0;
-  --accent: #0f6b63;       /* 6.1:1 on --bg, used for links and the primary button */
-  --accent-strong: #0b524c;
+  --bg: #ffffff;
+  --surface: #f6f8fa;
+  --surface-2: #eef1f4;
+  --text: #1f2328;
+  --muted: #59636e;        /* 6.3:1 on --bg */
+  --border: #d1d9e0;
+  --accent: #1a7f37;       /* 5.1:1 on --bg, used for links and the primary button */
+  --accent-strong: #116329;
   --on-accent: #ffffff;
-  --tag-bg: #e6f1ef;
-  --tag-text: #0b4f49;
+  --tag-bg: #dafbe1;
+  --tag-text: #0f5323;
   --todo-bg: #fff6db;
   --todo-text: #6b4b00;
   --todo-border: #e3c565;
   --ok: #1a7f37;
-  --shadow: 0 1px 2px rgba(16, 24, 32, 0.05), 0 4px 16px rgba(16, 24, 32, 0.05);
-  --radius: 12px;
+  --shadow: none;
+  --radius: 6px;
   --wrap: 1080px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #101315;
-  --surface: #171b1e;
-  --surface-2: #1d2226;
-  --text: #e8ebed;
-  --muted: #a9b3bc;      /* 8.4:1 on --bg */
-  --border: #2b3237;
-  --accent: #5fd4c4;     /* 10.6:1 on --bg */
-  --accent-strong: #8ee4d8;
-  --on-accent: #062a26;
-  --tag-bg: #16302d;
-  --tag-text: #a8ebe1;
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-2: #11161d;
+  --text: #e6edf3;
+  --muted: #9aa5b1;      /* 7.6:1 on --bg */
+  --border: #30363d;
+  --accent: #56d364;     /* 11:1 on --bg */
+  --accent-strong: #7ee787;
+  --on-accent: #04210d;
+  --tag-bg: #0f2a18;
+  --tag-text: #7ee787;
   --todo-bg: #33290d;
   --todo-text: #f3d98a;
   --todo-border: #7a6420;
-  --ok: #4ac26b;
+  --ok: #56d364;
   --shadow: none;
 }
 
@@ -268,3 +269,58 @@ p { margin: 0; }
 .mock__context { list-style: none; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--border); display: grid; gap: 6px; font-size: 0.92rem; color: var(--muted); }
 .mock__context span { display: inline-block; min-width: 4.5em; font-weight: 700; color: var(--text); }
 .mock figcaption { margin-top: 8px; color: var(--muted); font-size: 0.85rem; }
+
+/* Developer look: monospace for labels and chrome, terminal-style prompts, flat bordered cards */
+.site-header__name { font-family: var(--mono); font-size: 0.95rem; }
+.site-header__name::before { content: "~/"; color: var(--accent); }
+.site-nav { font-family: var(--mono); font-size: 0.85rem; }
+.site-nav a:hover { color: var(--accent); }
+.theme-toggle { border-radius: 6px; }
+
+.hero__text::before {
+  content: "$ whoami" / "";
+  display: block; margin-bottom: 10px;
+  font-family: var(--mono); font-size: 0.9rem; color: var(--accent);
+}
+.hero h1 { font-family: var(--mono); font-weight: 700; letter-spacing: -0.03em; }
+.hero__place { font-family: var(--mono); font-size: 0.9rem; }
+.hero__place::before { content: "// " / ""; color: var(--accent); }
+.hero__headline { font-weight: 400; color: var(--text); }
+.avatar { border-radius: 8px; }
+.avatar--initials { font-family: var(--mono); }
+
+h2 { font-family: var(--mono); letter-spacing: -0.02em; }
+h2::before { content: "## " / ""; color: var(--accent); font-weight: 400; }
+.concept h1 { font-family: var(--mono); }
+
+.tags li, .chip {
+  font-family: var(--mono); font-size: 0.8rem; font-weight: 400;
+  border-radius: 6px; border: 1px solid color-mix(in srgb, var(--tag-text) 28%, transparent);
+}
+.chips .chip { font-size: 0.75rem; }
+
+.button { font-family: var(--mono); font-size: 0.9rem; border-radius: 6px; }
+.button:hover { border-color: var(--accent); color: var(--accent); }
+.button--primary:hover { color: var(--on-accent); }
+.button__note { opacity: 0.7; }
+
+.offer, .case, .more-item, .flow > li, .mock__entry { border-radius: 6px; }
+.offer h3, .case h3, .more-item__title { font-family: var(--mono); font-size: 1rem; }
+.offer, .case { transition: border-color 0.15s; }
+.offer:hover, .case:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+.offer ul { list-style: none; padding-left: 0; }
+.offer ul li { position: relative; padding-left: 1.4em; }
+.offer ul li::before { content: ">"; position: absolute; left: 0; font-family: var(--mono); color: var(--accent); }
+
+.case dt, .subhead, .roles dt { font-family: var(--mono); }
+.more-item__years, .timeline__when, .case__meta, .writing__meta, .stack__where { font-family: var(--mono); font-size: 0.82rem; }
+.timeline { border-left-style: dashed; }
+.timeline > li::before { border-radius: 2px; }
+.flow > li::before { border-radius: 4px; font-family: var(--mono); }
+
+.contact { background: var(--surface); }
+.contact__links, .contact__small { font-family: var(--mono); }
+.contact__links { font-size: 0.95rem; }
+code, .tool-list code { font-family: var(--mono); }
+
+@media (prefers-reduced-motion: reduce) { .offer, .case { transition: none; } }
