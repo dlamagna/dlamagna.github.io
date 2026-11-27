@@ -65,6 +65,20 @@
       ]
     },
     {
+      "id": "context-aware-hpa",
+      "title": "Context-Aware HPA: scaling services on the load coming at them",
+      "meta": "UPC · 2024 to 2025 · paper in progress",
+      "problem": "Kubernetes scales each service on its own load, so in a chain of services the ones further down only react after the traffic has already reached them.",
+      "did": "Second author on the research. I built the test setup: a standard social-network benchmark on a Kubernetes cluster, with monitoring and load tests, and a scaler where each service reacts to the load arriving at the service before it.",
+      "stack": ["Kubernetes", "Helm", "Prometheus", "Grafana", "k6", "Python"],
+      "outcome": "Cut the slowest 1% of response times by 9.88% on the benchmark. A paper is in preparation, with Berta Serracanta as first author.",
+      "links": [
+        { "label": "Code", "url": "https://github.com/bserracanta/Context-Aware-HPA" },
+        { "label": "My testbed", "url": "https://github.com/dlamagna/deathstar-context-aware" },
+        { "label": "Data collection", "url": "https://github.com/dlamagna/social-network-tracing" }
+      ]
+    },
+    {
       "id": "agentic-devops",
       "title": "Agentic DevOps: managing a team of AI coding agents",
       "meta": "Own tooling · private repository",
@@ -97,30 +111,6 @@
       "links": [
         { "label": "Code", "url": "https://github.com/dlamagna/climbing-app" }
       ]
-    },
-    {
-      "id": "margin",
-      "title": "Margin: a Word editor with Claude built in",
-      "meta": "Own product, in progress · private repository",
-      "problem": "AI edits to real Word documents should keep the formatting and be easy to review.",
-      "did": "Building a desktop app that opens a Word document next to Claude Code. Claude edits the open document directly, and every edit shows up as a tracked change to accept or reject.",
-      "stack": [
-        "TypeScript",
-        "React",
-        "SuperDoc",
-        "xterm.js",
-        "Hono",
-        "WebSockets",
-        "MCP TypeScript SDK",
-        "Electron",
-        "Vitest",
-        "Playwright"
-      ],
-      "outcome": "Built by one lead AI agent coordinating helpers (see Agentic DevOps): 81 changes merged so far, with up to about 20 in progress at once.",
-      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/margin/walkthrough.html" },
-      "links": [
-        { "label": "Project site", "url": "https://dlamagna.github.io/margin/" }
-      ]
     }
   ],
 
@@ -134,10 +124,10 @@
     },
     {
       "group": "Smaller projects",
-      "title": "Context-Aware HPA",
-      "years": "2024 to 2025",
-      "line": "Smarter automatic scaling for apps on Kubernetes: each service scales up based on the load arriving further up the chain, not only its own. Cut the slowest 1% of response times by 9.88% on a standard benchmark.",
-      "url": "https://github.com/dlamagna/deathstar-context-aware"
+      "title": "Margin",
+      "years": "2026",
+      "line": "Word editor, in progress, with Claude built in: Claude edits the open document and every change shows up as a tracked change to accept or reject. Built by one lead AI agent coordinating helpers. Private repository.",
+      "demo": { "label": "Check it out", "url": "https://dlamagna.github.io/margin/walkthrough.html" }
     },
     {
       "group": "Smaller projects",
@@ -152,13 +142,6 @@
       "years": "2025",
       "line": "Web crawler that saves a site's pages as Markdown, HTML or plain text, follows only the sections you choose and paces its requests politely.",
       "url": "https://github.com/dlamagna/crawley"
-    },
-    {
-      "group": "Smaller projects",
-      "title": "Social Network Tracing",
-      "years": "2025",
-      "line": "Automatically collects performance data from a sample social-network app running on Kubernetes.",
-      "url": "https://github.com/dlamagna/social-network-tracing"
     },
     {
       "group": "Smaller projects",
