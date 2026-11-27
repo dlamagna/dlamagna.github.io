@@ -7,7 +7,7 @@ Run after editing data/projects.json:
     python3 scripts/sync.py --check  # exit 1 if they are out of date (nothing is written)
 
 What it updates:
-- the headline (site.headline) in the hero, the meta description, Open Graph, Twitter and JSON-LD
+- the headline (site.headline) in the meta description, Open Graph, Twitter and JSON-LD
 - the <noscript> fallback lists for every data-driven section, so crawlers and
   visitors without JavaScript see the same entries as the rendered page
 - the headline in scripts/og-image.html (re-take the preview image afterwards, see README.md)
@@ -142,7 +142,8 @@ def main():
     headline = site["headline"]
 
     index = INDEX.read_text(encoding="utf-8")
-    new = replace_marker(index, "headline", esc(headline))
+    # The hero no longer shows the headline; fill the marker only if it is there.
+    new = replace_marker(index, "headline", esc(headline)) if "<!-- sync:headline -->" in index else index
     for sel in ('name="description"', 'property="og:description"', 'name="twitter:description"'):
         new = replace_attr(new, sel, headline)
     new = re.sub(r'("@type": "Person",(?:.|\n)*?"description": )"[^"]*"',
